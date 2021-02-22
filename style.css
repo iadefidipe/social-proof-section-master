@@ -1,4 +1,37 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
-  background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+  height: 100vh;
+  margin: 20px;
+  font-family: "Spartan", sans-serif;
+}
+
+.container {
+  margin: 100px;
+}
+
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.hero .hero1 {
+  width: 40%;
+}
+
+.hero .hero1 h1 {
+  color: #502050;
+  font-weight: 700;
+}
+
+.hero .hero1 p {
+  color: #937b92;
+  font-weight: 500;
 }
 /*# sourceMappingURL=style.css.map */

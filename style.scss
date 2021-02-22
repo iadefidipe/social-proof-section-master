@@ -1,18 +1,42 @@
-$color-primary-Magenta:hsl(300, 43%, 22%);
-$color-primary-Pink: hsl(333, 80%, 67%);
-$color-neutral-dark-Magneta: hsl(303, 10%, 53%);
-$color-neutral-light-Magneta: hsl(300, 24%, 96%);
-$color-neutral-white:hsl(0, 0%, 100%);
+@import './partials/variables';
 
-
-$font-spartan:'Spartan', sans-serif;
-$font-regular: 400;
-$font-medium: 500;
-$font-bold: 700;
-
+html{
+    box-sizing: border-box;
+}
 body{
-    background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+    height: 100vh;
+    margin: 20px;
+    font-family: $font-spartan;
     
+    // background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+    // background-repeat: no-repeat, no-repeat;
+    // background-position: top right, 150px -300px;
+}
+
+.container{
+    // max-width: 1000px;
+    margin: 100px;
+
+
+}
+
+.hero{
+    display: flex;
+    justify-content: space-around;
+    .hero1{
+        width: 40%;
+        h1{
+            color:$color-primary-Magenta;
+            font-weight: $font-bold;
+
+        }
+        p{
+            color: $color-neutral-dark-Magneta;
+            font-weight: $font-medium;
+
+
+        }
+    }
 }
 
 
