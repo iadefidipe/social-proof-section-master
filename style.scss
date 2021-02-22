@@ -15,26 +15,48 @@ body{
 
 .container{
     // max-width: 1000px;
-    margin: 100px;
+    margin: 100px,auto;
 
 
 }
 
 .hero{
     display: flex;
+    
     justify-content: space-around;
     .hero1{
-        width: 40%;
         h1{
+            width: 50%;
             color:$color-primary-Magenta;
             font-weight: $font-bold;
-
+            font-size: 3rem;
         }
+
         p{
+            width: 60%;
+            margin-top: -15px;
             color: $color-neutral-dark-Magneta;
             font-weight: $font-medium;
-
-
+            font-size: 0.9375rem;
+            line-height: 1.7rem;
+        }
+    }
+    .hero2{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        .rating{
+            margin-bottom: 10px;
+            padding: 10px;
+            background: $color-neutral-light-Magneta;
+            display: flex;
+            justify-content: space-around;
+            align-items: baseline;
+            text-align: left;
+            .stars{
+                display: flex;
+            }
         }
     }
 }
