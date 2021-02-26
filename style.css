@@ -1,35 +1,36 @@
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  height: 100vh;
 }
 
 body {
-  height: 100vh;
-  margin: 20px;
   font-family: "Spartan", sans-serif;
 }
 
 .container {
-  margin: 100px,auto;
+  margin: 100px;
 }
 
-.hero {
+.container__hero {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
 }
 
-.hero .hero1 h1 {
-  width: 50%;
+.container__hero .hero1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 40%;
+          flex: 1 40%;
+}
+
+.container__hero .hero1 h1 {
   color: #502050;
   font-weight: 700;
   font-size: 3rem;
 }
 
-.hero .hero1 p {
-  width: 60%;
+.container__hero .hero1 p {
   margin-top: -15px;
   color: #937b92;
   font-weight: 500;
@@ -37,8 +38,11 @@ body {
   line-height: 1.7rem;
 }
 
-.hero .hero2 {
-  margin-top: 50px;
+.container__hero .hero2 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 60%;
+          flex: 1 60%;
+  margin: 50px 0 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,27 +50,52 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 50%;
 }
 
-.hero .hero2 .rating {
-  margin-bottom: 10px;
-  padding: 10px;
+.container__hero .hero2 .rating {
+  margin: 0 50px 20px 50px;
+  border-radius: 10px;
+  padding: 15px;
   background: #f7f2f7;
+  padding: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  text-align: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #502050;
 }
 
-.hero .hero2 .rating .stars {
+.container__hero .hero2 .rating .stars {
+  width: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container__hero .hero2 .rating h3 {
+  font-size: 0.9372rem;
+}
+
+.hero2 .rating:first-of-type {
+  -webkit-transform: translateX(-20px);
+          transform: translateX(-20px);
+}
+
+.hero2 .rating:nth-of-type(2) {
+  -webkit-transform: translateX(20px);
+          transform: translateX(20px);
+}
+
+.hero2 .rating:last-of-type {
+  -webkit-transform: translateX(70px);
+          transform: translateX(70px);
 }
 /*# sourceMappingURL=style.css.map */

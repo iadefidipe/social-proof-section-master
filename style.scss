@@ -2,10 +2,9 @@
 
 html{
     box-sizing: border-box;
+    height: 100vh;
 }
 body{
-    height: 100vh;
-    margin: 20px;
     font-family: $font-spartan;
     
     // background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
@@ -15,51 +14,79 @@ body{
 
 .container{
     // max-width: 1000px;
-    margin: 100px,auto;
-
-
-}
-
-.hero{
-    display: flex;
+    margin: 100px; 
     
-    justify-content: space-around;
-    .hero1{
-        h1{
-            width: 50%;
-            color:$color-primary-Magenta;
-            font-weight: $font-bold;
-            font-size: 3rem;
-        }
-
-        p{
-            width: 60%;
-            margin-top: -15px;
-            color: $color-neutral-dark-Magneta;
-            font-weight: $font-medium;
-            font-size: 0.9375rem;
-            line-height: 1.7rem;
-        }
-    }
-    .hero2{
-        margin-top: 50px;
+    &__hero{
         display: flex;
-        flex-direction: column;
-        width: 50%;
-        .rating{
-            margin-bottom: 10px;
-            padding: 10px;
-            background: $color-neutral-light-Magneta;
+        
+
+        .hero1{
+            flex:1 40% ;
+
+            h1{
+                // width: 50%;
+                color:$color-primary-Magenta;
+                font-weight: $font-bold;
+                font-size: 3rem;
+            }
+
+            p{
+                // width: 60%;
+                margin-top: -15px;
+                color: $color-neutral-dark-Magneta;
+                font-weight: $font-medium;
+                font-size: 0.9375rem;
+                line-height: 1.7rem;
+            }
+        }
+        .hero2{
+            flex:1 60%;
+            margin: 50px 0 0 20px;
             display: flex;
-            justify-content: space-around;
-            align-items: baseline;
-            text-align: left;
-            .stars{
+            flex-direction: column;
+            
+            .rating{
+                margin: 0 50px 20px 50px;
+                border-radius: 10px;
+                padding: 15px;
+                background: $color-neutral-light-Magneta;
+                padding: 5px;
                 display: flex;
+                justify-content: space-around;
+                align-items: center;
+                color: $color-primary-Magenta;
+                
+                .stars{
+                    width: 20%;
+                    display: flex;
+                    margin: 10px;
+                    justify-content: space-between;
+                }
+                h3{
+                    font-size: $font-regular;
+                }
             }
         }
     }
 }
+
+.hero2{
+    .rating:first-of-type{
+        transform: translateX(-20px);
+    }
+    .rating:nth-of-type(2){
+        transform: translateX(20px);
+    }
+    .rating:last-of-type{
+        transform: translateX(70px);
+    }
+
+}
+
+
+
+
+
 
 
 
