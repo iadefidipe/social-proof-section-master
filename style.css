@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-  margin: 100px;
+  margin: 50px;
 }
 
 .container__hero {
@@ -82,6 +82,59 @@ body {
 
 .container__hero .hero2 .rating h3 {
   font-size: 0.9372rem;
+}
+
+.container__cards {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container__cards .card {
+  width: 330px;
+  height: 200px;
+  background: #502050;
+  padding: 25px;
+  border-radius: 10px;
+  color: #f7f2f7;
+  font-size: 0.8rem;
+}
+
+.container__cards .card__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container__cards .card__header img {
+  border-radius: 70px;
+  width: 50px;
+  height: 50px;
+}
+
+.container__cards .card__header .profile {
+  font-size: 0.8rem;
+  margin: 15px 15px 0 15px;
+}
+
+.container__cards .card__header .profile p:first-of-type {
+  font-weight: 700;
+}
+
+.container__cards .card__header .profile p:last-of-type {
+  color: #ee68a4;
+  margin-top: -10px;
+}
+
+.container__cards .card .testimonial {
+  line-height: 1.7rem;
 }
 
 .hero2 .rating:first-of-type {
