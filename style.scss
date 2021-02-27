@@ -39,16 +39,17 @@ body{
                 line-height: 1.7rem;
             }
         }
+
         .hero2{
             flex:1 60%;
             margin: 50px 0 0 20px;
             display: flex;
             flex-direction: column;
-            animation: ratings 5s forwards;
+            
+            
             
             
             .rating{
-                
                 margin: 0 50px 20px 50px;
                 border-radius: 10px;
                 padding: 15px;
@@ -119,54 +120,85 @@ body{
     }
 }
 
-// .hero2{
-//     .rating:first-of-type{
-//         transform: translateX(-20px);
-//     }
-//     .rating:nth-of-type(2){
-//         transform: translateX(20px);
-//     }
-//     .rating:last-of-type{
-//         transform: translateX(70px);
-//     }
+.hero2{
+    .rating:first-of-type{
+        animation: rating1 1s linear forwards;
 
-// }
+        @keyframes rating1{
+            0%{
+                transform: translateX(0);
+            }
+            100%{
+                transform: translateX(20px);
+            }
+        }
+    }
+    .rating:nth-of-type(2){
+        animation: rating2 1s linear forwards;
 
-@keyframes ratings{
-    0%{
-        .rating:first-of-type{
-            transform: translateX(0);
+        @keyframes rating2{
+            0%{
+                transform: translateX(0);
+            }
+            100%{
+                transform: translateX(70px);
+            }
         }
-        .rating:nth-of-type(2){
-            transform: translateX(0);
-        }
-        .rating:last-of-type{
-            transform: translateX(0);
+    }
+    .rating:last-of-type{
+        animation: rating3 1s linear forwards;
+
+        @keyframes rating3{
+            0%{
+                transform: translateX(0);
+            }
+            100%{
+                transform: translateX(110px);
+            }
         }
     }
 
-    100%{
-        .rating:first-of-type{
-            transform: translateX(-20px);
-        }
-        .rating:nth-of-type(2){
-            transform: translateX(20px);
-        }
-        .rating:last-of-type{
-            transform: translateX(70px);
-        }
-    }
 }
 
+.container__cards{
+    .card:first-of-type{
+        animation: card1 1s linear forwards;
 
+        @keyframes card1{
+            0%{
+                transform: translateY(0);
+            }
+            100%{
+                transform: translateY(5px);
+            }
+        }
+    }
+    .card:nth-of-type(2){
+        animation: card2 1s linear forwards;
 
+        @keyframes card2{
+            0%{
+                transform: translateY(0);
+            }
+            100%{
+                transform: translateY(30px);
+            }
+        }
+    }
+    .card:last-of-type{
+        animation: card3 1s linear forwards;
 
+        @keyframes card3{
+            0%{
+                transform: translateY(0);
+            }
+            100%{
+                transform: translateY(50px);
+            }
+        }
+    }
 
-
-
-
-
-
+}
 
 
 
