@@ -2,19 +2,21 @@
 
 html{
     box-sizing: border-box;
-    height: 100vh;
+    
 }
 body{
     font-family: $font-spartan;
+    height: 100vh;
     
-    // background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
-    // background-repeat: no-repeat, no-repeat;
-    // background-position: top right, 150px -300px;
+    background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top left, bottom right;
+    
 }
 
 .container{
-    // max-width: 1000px;
-    margin: 50px; 
+    max-width: 1000px;
+    margin: 50px auto; 
     
     &__hero{
         display: flex;
@@ -80,8 +82,9 @@ body{
         .card{
             width: 330px;
             height: 200px;
+            
             background: $color-primary-Magenta;
-            padding: 25px;
+            padding: 30px;
             border-radius: 10px;
             color: $color-neutral-light-Magneta;
             font-size: 0.8rem;
@@ -162,7 +165,7 @@ body{
 
 .container__cards{
     .card:first-of-type{
-        animation: card1 1s linear forwards;
+        animation: card1 1s 1s linear forwards;
 
         @keyframes card1{
             0%{
@@ -174,7 +177,8 @@ body{
         }
     }
     .card:nth-of-type(2){
-        animation: card2 1s linear forwards;
+        margin-left: 30px;
+        animation: card2 1s 2s linear forwards;
 
         @keyframes card2{
             0%{
@@ -186,7 +190,8 @@ body{
         }
     }
     .card:last-of-type{
-        animation: card3 1s linear forwards;
+        margin-left: 30px;
+        animation: card3 1s 3s linear forwards;
 
         @keyframes card3{
             0%{
