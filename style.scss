@@ -1,8 +1,8 @@
 @import './partials/variables';
+@import './partials/media-queries';
 
 html{
     box-sizing: border-box;
-    
 }
 body{
     font-family: $font-spartan;
@@ -11,25 +11,51 @@ body{
     background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
     background-repeat: no-repeat, no-repeat;
     background-position: top left, bottom right;
+
+    @include media-query (desktop-large){
+        background-position: top 900px, bottom right;
+        background-size: 1000px, 2500px;
+    }
     
 }
 
 .container{
     max-width: 1000px;
-    margin: 50px auto; 
+    margin: 100px auto;
+    @include media-query (desktop-large){
+        max-width: 1500px;
+    } 
+    @include media-query (tablet){
+        max-width: 600px;
+    }
+
     
     &__hero{
         display: flex;
+        @include media-query (tablet){
+            flex-wrap: wrap;
+            text-align: center;
+            
+        }
         
 
         .hero1{
             flex:1 40% ;
+            @include media-query (tablet){
+                margin: auto;
+            
+            }
+
 
             h1{
                 // width: 50%;
                 color:$color-primary-Magenta;
                 font-weight: $font-bold;
                 font-size: 3rem;
+                @include media-query (tablet){
+                    font-size: 2.5rem;
+                    
+                }
             }
 
             p{
@@ -39,6 +65,14 @@ body{
                 font-weight: $font-medium;
                 font-size: 0.9375rem;
                 line-height: 1.7rem;
+                @include media-query (desktop-large){
+                    font-size: 1.2rem;
+                    line-height: 2rem;
+                } 
+
+                @include media-query (tablet){
+                    font-size: 1rem;
+                }
             }
         }
 
@@ -47,8 +81,6 @@ body{
             margin: 50px 0 0 20px;
             display: flex;
             flex-direction: column;
-            
-            
             
             
             .rating{
@@ -61,6 +93,10 @@ body{
                 justify-content: space-around;
                 align-items: center;
                 color: $color-primary-Magenta;
+                @include media-query (mobile){
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                }
                 
                 .stars{
                     width: 20%;
@@ -70,6 +106,10 @@ body{
                 }
                 h3{
                     font-size: $font-regular;
+                    @include media-query (desktop-large){
+                        font-size: 1.2rem;
+                    } 
+                    
                 }
             }
         }
@@ -79,9 +119,25 @@ body{
         margin-top: 30px;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
+        
         .card{
             width: 330px;
-            height: 200px;
+            min-height: 200px;
+            @include media-query (desktop-large){
+                min-width: 330px;
+                padding: 50px;
+                font-size: 1.2rem;
+            } 
+            @include media-query (tablet){
+                min-width: 500px;
+            }
+
+            @include media-query (mobile){
+                width: 200px;
+            }
+
+
             
             background: $color-primary-Magenta;
             padding: 30px;
@@ -97,12 +153,22 @@ body{
                     border-radius: 70px;
                     width: 50px;
                     height: 50px;
-                    
-
+                    @include media-query (desktop-large){
+                        border-radius: 70px;
+                        width: 100px;
+                        height: 100px;
+                    }
                 }
                 .profile{
-                    font-size: 0.8rem;
+                    font-size: $font-regular;
                     margin: 15px 15px 0 15px;
+                    @include media-query (desktop-large){
+                        font-size: 1.2rem;
+                        margin: 25px 25px 0 25px;
+                    }
+                    @include media-query (tablet){
+                        min-width: 500px;
+                    }
 
                     p:first-of-type{
                         font-weight: $font-bold;
@@ -116,7 +182,11 @@ body{
             }
 
             .testimonial{
-                line-height: 1.7rem;
+                line-height: $line-height;
+                @include media-query (desktop-large){
+                    line-height: 2rem;
+                } 
+                
             }
 
         }
@@ -126,6 +196,10 @@ body{
 .hero2{
     .rating:first-of-type{
         animation: rating1 1s linear forwards;
+        @include media-query (tablet){
+            animation: none;
+        }
+
 
         @keyframes rating1{
             0%{
@@ -138,6 +212,10 @@ body{
     }
     .rating:nth-of-type(2){
         animation: rating2 1s linear forwards;
+        @include media-query (tablet){
+            animation: none;
+        }
+
 
         @keyframes rating2{
             0%{
@@ -150,6 +228,9 @@ body{
     }
     .rating:last-of-type{
         animation: rating3 1s linear forwards;
+        @include media-query (tablet){
+            animation: none;
+        }
 
         @keyframes rating3{
             0%{
@@ -166,6 +247,11 @@ body{
 .container__cards{
     .card:first-of-type{
         animation: card1 1s 1s linear forwards;
+        @include media-query (tablet){
+            margin-left: auto;
+            margin-right: auto;
+            animation: none;
+        }
 
         @keyframes card1{
             0%{
@@ -179,6 +265,10 @@ body{
     .card:nth-of-type(2){
         margin-left: 30px;
         animation: card2 1s 2s linear forwards;
+        @include media-query (tablet){
+            margin: 20px auto 0 auto;
+            animation: none;
+        }
 
         @keyframes card2{
             0%{
@@ -192,6 +282,10 @@ body{
     .card:last-of-type{
         margin-left: 30px;
         animation: card3 1s 3s linear forwards;
+        @include media-query (tablet){
+            margin: 20px auto 0 auto;
+            animation: none;
+        }
 
         @keyframes card3{
             0%{
@@ -204,6 +298,8 @@ body{
     }
 
 }
+
+
 
 
 
