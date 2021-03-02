@@ -46,6 +46,11 @@ body{
             
             }
 
+            // @include media-query (mobile){
+            //     text-align: center;
+            
+            // }
+
 
             h1{
                 // width: 50%;
@@ -56,6 +61,8 @@ body{
                     font-size: 2.5rem;
                     
                 }
+
+
             }
 
             p{
@@ -81,6 +88,11 @@ body{
             margin: 50px 0 0 20px;
             display: flex;
             flex-direction: column;
+            @include media-query (mobile){
+                    
+                    margin: 50px auto 0 auto;
+                    
+                }
             
             
             .rating{
@@ -95,7 +107,10 @@ body{
                 color: $color-primary-Magenta;
                 @include media-query (mobile){
                     flex-direction: column;
-                    flex-wrap: wrap;
+                    // flex-wrap: wrap;
+                    min-width: 500px;
+                    margin: 0 auto 20px auto;
+                    
                 }
                 
                 .stars{

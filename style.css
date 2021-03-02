@@ -108,6 +108,12 @@ body {
           flex-direction: column;
 }
 
+@media screen and (max-width: 556px) {
+  .container__hero .hero2 {
+    margin: 50px auto 0 auto;
+  }
+}
+
 .container__hero .hero2 .rating {
   margin: 0 50px 20px 50px;
   border-radius: 10px;
@@ -131,8 +137,8 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    min-width: 500px;
+    margin: 0 auto 20px auto;
   }
 }
 
