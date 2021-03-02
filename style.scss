@@ -134,7 +134,9 @@ body{
         margin-top: 30px;
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
+        @include media-query (tablet){
+            flex-wrap: wrap;
+        } 
         
         .card{
             width: 330px;
@@ -150,6 +152,7 @@ body{
 
             @include media-query (mobile){
                 width: 200px;
+                padding: 20px;
             }
 
 
@@ -180,9 +183,6 @@ body{
                     @include media-query (desktop-large){
                         font-size: 1.2rem;
                         margin: 25px 25px 0 25px;
-                    }
-                    @include media-query (tablet){
-                        min-width: 500px;
                     }
 
                     p:first-of-type{
