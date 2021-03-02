@@ -1,10 +1,11 @@
 @import './partials/variables';
 @import './partials/media-queries';
-@import './partials/basics'
+@import './partials/basics';
 
 
 
 .container{
+    font-family: $font-spartan;
     max-width: 1000px;
     margin: 100px auto;
     @include media-query (desktop-large){
