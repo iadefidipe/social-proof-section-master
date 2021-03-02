@@ -1,0 +1,17 @@
+html{
+    box-sizing: border-box;
+}
+body{
+    font-family: $font-spartan;
+    height: 100vh;
+    
+    background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top left, bottom right;
+
+    @include media-query (desktop-large){
+        background-position: top 900px, bottom right;
+        background-size: 1000px, 2500px;
+    }
+    
+}
