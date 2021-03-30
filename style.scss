@@ -1,34 +1,55 @@
 @import './partials/variables';
-@import './partials/media-queries'
+@import './partials/media-queries';
+@import './partials/basics';
 
-html{
-    box-sizing: border-box;
-    height: 100vh;
-}
-body{
-    font-family: $font-spartan;
-    
-    // background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
-    // background-repeat: no-repeat, no-repeat;
-    // background-position: top right, 150px -300px;
-}
 
+
+/* Container style */
 .container{
-    // max-width: 1000px;
-    margin: 50px; 
+    font-family: $font-spartan;
+    max-width: 1000px;
+    margin: 100px auto;
+    @include media-query (desktop-large){
+        max-width: 1500px;
+    } 
+    @include media-query (tablet){
+        max-width: 600px;
+    }
+
     
     &__hero{
         display: flex;
+        @include media-query (tablet){
+            flex-wrap: wrap;
+            text-align: center;
+            
+        }
         
 
         .hero1{
-            flex:1 40% ;
+            flex:1 40%;
+            @include media-query (tablet){
+                margin: auto;
+            
+            }
+
+            // @include media-query (mobile){
+            //     text-align: center;
+            
+            // }
+
 
             h1{
                 // width: 50%;
                 color:$color-primary-Magenta;
                 font-weight: $font-bold;
-                font-size: 3rem;
+                font-size: $font-desktop-h1;
+                @include media-query (tablet){
+                    font-size: $font-tablet-h1;
+                    
+                }
+
+
             }
 
             p{
@@ -36,8 +57,16 @@ body{
                 margin-top: -15px;
                 color: $color-neutral-dark-Magneta;
                 font-weight: $font-medium;
-                font-size: 0.9375rem;
-                line-height: 1.7rem;
+                font-size: $font-regular;
+                line-height: $line-height;
+                @include media-query (desktop-large){
+                    font-size: $font-regular-DL;
+                    line-height: $line-height-DL;
+                } 
+
+                @include media-query (tablet){
+                    font-size: $font-tablet-hero-p;
+                }
             }
         }
 
@@ -46,29 +75,52 @@ body{
             margin: 50px 0 0 20px;
             display: flex;
             flex-direction: column;
-            
-            
+            @include media-query (mobile){
+                width: 80%;
+                    
+                    margin: 50px auto 0 auto;
+                    
+                }
             
             
             .rating{
                 margin: 0 50px 20px 50px;
                 border-radius: 10px;
-                padding: 15px;
                 background: $color-neutral-light-Magneta;
                 padding: 5px;
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
                 color: $color-primary-Magenta;
+                @include media-query (mobile){
+                    flex-direction: column;
+                    // flex-wrap: wrap;
+                    width: 90%;
+                    margin: 0 auto 20px auto;
+                    
+                }
                 
                 .stars{
                     width: 20%;
                     display: flex;
                     margin: 10px;
                     justify-content: space-between;
+                    @include media-query (tablet){
+                        margin: auto;
+                    } 
+
+
                 }
                 h3{
                     font-size: $font-regular;
+                    @include media-query (desktop-large){
+                        font-size: $font-regular-DL;
+                    }
+                    @include media-query (mobile){
+                        font-size: $font-regular-mobile;
+                    } 
+
+                    
                 }
             }
         }
@@ -78,14 +130,40 @@ body{
         margin-top: 30px;
         display: flex;
         justify-content: space-between;
+        @include media-query (tablet){
+            flex-wrap: wrap;
+        } 
+        
         .card{
             width: 330px;
-            height: 200px;
+            min-height: 200px;
             background: $color-primary-Magenta;
-            padding: 25px;
+            padding: 30px;
             border-radius: 10px;
             color: $color-neutral-light-Magneta;
-            font-size: 0.8rem;
+            font-size: $font-regular;
+
+
+            @include media-query (desktop-large){
+                min-width: 330px;
+                padding: 50px;
+                font-size: $font-regular-DL;
+            } 
+            @include media-query (tablet){
+                width: 90%;
+            }
+
+            @include media-query (mobile){
+                
+                padding: 20px;
+                font-size: $font-regular-mobile;
+            }
+
+
+            
+            
+
+            
             &__header{
                 display: flex;
                 align-items: center;
@@ -95,12 +173,22 @@ body{
                     border-radius: 70px;
                     width: 50px;
                     height: 50px;
-                    
-
+                    @include media-query (desktop-large){
+                        border-radius: 70px;
+                        width: 100px;
+                        height: 100px;
+                    }
                 }
                 .profile{
-                    font-size: 0.8rem;
+                    font-size: $font-regular;
                     margin: 15px 15px 0 15px;
+                    @include media-query (desktop-large){
+                        font-size: $font-regular-DL;
+                        margin: 25px 25px 0 25px;
+                    }
+                    @include media-query (mobile){
+                        font-size: $font-regular-mobile;
+                    }
 
                     p:first-of-type{
                         font-weight: $font-bold;
@@ -114,7 +202,11 @@ body{
             }
 
             .testimonial{
-                line-height: 1.7rem;
+                line-height: $line-height;
+                @include media-query (desktop-large){
+                    line-height: $line-height-DL;
+                } 
+                
             }
 
         }
@@ -124,6 +216,10 @@ body{
 .hero2{
     .rating:first-of-type{
         animation: rating1 1s linear forwards;
+        @include media-query (tablet){
+            animation: none;
+        }
+
 
         @keyframes rating1{
             0%{
@@ -136,6 +232,10 @@ body{
     }
     .rating:nth-of-type(2){
         animation: rating2 1s linear forwards;
+        @include media-query (tablet){
+            animation: none;
+        }
+
 
         @keyframes rating2{
             0%{
@@ -148,6 +248,9 @@ body{
     }
     .rating:last-of-type{
         animation: rating3 1s linear forwards;
+        @include media-query (tablet){
+            animation: none;
+        }
 
         @keyframes rating3{
             0%{
@@ -163,7 +266,12 @@ body{
 
 .container__cards{
     .card:first-of-type{
-        animation: card1 1s linear forwards;
+        animation: card1 1s 1s linear forwards;
+        @include media-query (tablet){
+            margin-left: auto;
+            margin-right: auto;
+            animation: none;
+        }
 
         @keyframes card1{
             0%{
@@ -175,7 +283,12 @@ body{
         }
     }
     .card:nth-of-type(2){
-        animation: card2 1s linear forwards;
+        margin-left: 30px;
+        animation: card2 1s 2s linear forwards;
+        @include media-query (tablet){
+            margin: 20px auto 0 auto;
+            animation: none;
+        }
 
         @keyframes card2{
             0%{
@@ -187,7 +300,12 @@ body{
         }
     }
     .card:last-of-type{
-        animation: card3 1s linear forwards;
+        margin-left: 30px;
+        animation: card3 1s 3s linear forwards;
+        @include media-query (tablet){
+            margin: 20px auto 0 auto;
+            animation: none;
+        }
 
         @keyframes card3{
             0%{
@@ -200,6 +318,8 @@ body{
     }
 
 }
+
+
 
 
 
