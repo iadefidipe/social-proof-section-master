@@ -1,0 +1,25 @@
+@mixin media-query($size) {
+  
+    @if $size == desktop-large{
+        @media screen and (min-width: 1440px) and (max-width: 2560px) {
+            @content;
+        }
+    }
+
+    @else if $size == desktop-medium {
+        @media screen and (max-width: 1024px) {
+            @content;
+        } 
+}
+
+    @else if $size == tablet {
+        @media screen and (max-width: 768px) {
+            @content;
+        } 
+    }
+    @else if $size == mobile {
+        @media screen and (max-width: 556px){
+            @content;
+        }
+    }
+}
